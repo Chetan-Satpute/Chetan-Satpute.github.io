@@ -518,6 +518,23 @@ if (true) {
 
 /***/ }),
 
+/***/ 298:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(294);
+
+var Label = function (_a) {
+    var className = _a.className, children = _a.children;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { className: "block text-gray-700 text-sm font-bold mb-2 ".concat(className) }, children));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Label);
+
+
+/***/ }),
+
 /***/ 872:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -974,9 +991,17 @@ var resetCanvasView = function () {
 };
 /* harmony default export */ const utils_resetCanvasView = (resetCanvasView);
 
+;// CONCATENATED MODULE: ./src/components/Buttons/ToolButton.tsx
+
+var ToolButton = function (_a) {
+    var _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.title, title = _c === void 0 ? "" : _c, handleClick = _a.handleClick, children = _a.children;
+    return (react.createElement("button", { className: "text-white p-1 m-1 rounded-md material-icons ".concat(disabled ? "bg-slate-400" : "bg-slate-500 hover:bg-slate-700"), onClick: handleClick, disabled: disabled, title: title }, children));
+};
+/* harmony default export */ const Buttons_ToolButton = (ToolButton);
+
 // EXTERNAL MODULE: ./src/lib/Board.ts
 var Board = __webpack_require__(872);
-;// CONCATENATED MODULE: ./src/components/Canvas.tsx
+;// CONCATENATED MODULE: ./src/components/Canvas/index.tsx
 
 
 var Canvas = function () {
@@ -991,15 +1016,38 @@ var Canvas = function () {
 };
 /* harmony default export */ const components_Canvas = (Canvas);
 
-;// CONCATENATED MODULE: ./src/components/ToolButton.tsx
+;// CONCATENATED MODULE: ./src/components/Modals/HomeModal.tsx
 
-var ToolButton = function (_a) {
-    var _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.title, title = _c === void 0 ? "" : _c, handleClick = _a.handleClick, children = _a.children;
-    return (react.createElement("button", { className: "text-white p-1 m-1 rounded-md material-icons ".concat(disabled ? "bg-slate-400" : "bg-slate-500 hover:bg-slate-700"), onClick: handleClick, disabled: disabled, title: title }, children));
+var HomeModal = function (_a) {
+    var toggleFullScreen = _a.toggleFullScreen;
+    var _b = (0,react.useState)(true), showModal = _b[0], setShowModal = _b[1];
+    if (showModal) {
+        return (react.createElement("div", { className: "fixed z-10 inset-0 overflow-y-auto" },
+            react.createElement("div", { className: "flex items-end pt-4 px-4 pb-20 text-center sm:block sm:p-0" },
+                react.createElement("div", { className: "fixed h-screen w-screen inset-0 bg-black bg-opacity-75 transition-opacity" }),
+                react.createElement("div", { className: "inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" },
+                    react.createElement("div", { className: "bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4" },
+                        react.createElement("div", { className: "sm:flex sm:items-start" },
+                            react.createElement("div", { className: "mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10" },
+                                react.createElement("span", { className: "material-icons-outlined text-blue-600" }, "info")),
+                            react.createElement("div", { className: "mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left" },
+                                react.createElement("h3", { className: "text-lg leading-6 font-medium text-gray-900", id: "modal-title" }, "Fullscreen Mode"),
+                                react.createElement("div", { className: "mt-2" },
+                                    react.createElement("p", { className: "text-sm text-gray-500" }, "It is recommended to use this application in fullscreen mode."))))),
+                    react.createElement("div", { className: "bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse" },
+                        react.createElement("button", { type: "button", className: "w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm", onClick: function () {
+                                toggleFullScreen(true);
+                                setShowModal(false);
+                            } }, "Enter Fullscreen"),
+                        react.createElement("button", { type: "button", className: "mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm", onClick: function () { return setShowModal(false); } }, "Cancel"))))));
+    }
+    else {
+        return react.createElement(react.Fragment, null);
+    }
 };
-/* harmony default export */ const components_ToolButton = (ToolButton);
+/* harmony default export */ const Modals_HomeModal = (HomeModal);
 
-;// CONCATENATED MODULE: ./src/components/Main.tsx
+;// CONCATENATED MODULE: ./src/components/Main/index.tsx
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1036,6 +1084,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 
 
 
@@ -1079,363 +1128,12 @@ var Main = function () {
     }); };
     return (react.createElement("main", { className: "overflow-auto grow relative" },
         react.createElement("div", { className: "absolute right-0 m-3 text-white flex flex-col" },
-            react.createElement(components_ToolButton, { handleClick: utils_resetCanvasView }, "home"),
-            react.createElement(components_ToolButton, { handleClick: function () { return toggleFullScreen(); }, disabled: !document.fullscreenEnabled }, fullscreen ? "fullscreen_exit" : "fullscreen")),
-        react.createElement(components_Canvas, null)));
+            react.createElement(Buttons_ToolButton, { handleClick: utils_resetCanvasView }, "home"),
+            react.createElement(Buttons_ToolButton, { handleClick: function () { return toggleFullScreen(); }, disabled: !document.fullscreenEnabled }, fullscreen ? "fullscreen_exit" : "fullscreen")),
+        react.createElement(components_Canvas, null),
+        react.createElement(Modals_HomeModal, { toggleFullScreen: toggleFullScreen })));
 };
 /* harmony default export */ const components_Main = (Main);
-
-;// CONCATENATED MODULE: ./src/components/AlgoInputButton.tsx
-
-var AlgoInputButton = function (_a) {
-    var title = _a.title, onClick = _a.onClick;
-    var _b = (0,react.useState)(0), searchValue = _b[0], setSearchValue = _b[1];
-    return (react.createElement("div", { className: "flex items-center justify-between" },
-        react.createElement("input", { className: "shadow flex-shrink appearance-none w-1/3 border mr-2 py-2 px-3 text-gray-700 rounded-md border-cyan-400 leading-tight focus:outline-none focus:shadow-outline", type: "number", placeholder: "Value to Search", value: searchValue, onChange: function (e) { return setSearchValue(+e.target.value); } }),
-        react.createElement("button", { className: "my-1 font-semibold flex-auto w-2/3 leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none", onClick: function () { return onClick(searchValue); } }, title)));
-};
-/* harmony default export */ const components_AlgoInputButton = (AlgoInputButton);
-
-;// CONCATENATED MODULE: ./src/components/Label.tsx
-
-var Label = function (_a) {
-    var title = _a.title;
-    return (react.createElement("label", { className: "block text-gray-700 text-sm font-bold mb-2" }, title));
-};
-/* harmony default export */ const components_Label = (Label);
-
-;// CONCATENATED MODULE: ./src/components/PanelSection.tsx
-
-var PanelSection = function (_a) {
-    var children = _a.children;
-    return (react.createElement(react.Fragment, null,
-        react.createElement("div", { className: "m-4" }, children),
-        react.createElement("hr", { className: "my-4" })));
-};
-/* harmony default export */ const components_PanelSection = (PanelSection);
-
-;// CONCATENATED MODULE: ./src/lib/BinarySearchTree/panel.tsx
-var panel_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var panel_generator = (undefined && undefined.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-
-
-
-
-
-var BinarySearchTreePanel = function (_a) {
-    var play = _a.play;
-    var _b = (0,react.useState)(), T = _b[0], setTree = _b[1];
-    (0,react.useEffect)(function () {
-        play(function () { return panel_awaiter(void 0, void 0, void 0, function () {
-            var BinarySearchTree, t;
-            return panel_generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, __webpack_require__.e(/* import() */ 919).then(__webpack_require__.bind(__webpack_require__, 919))];
-                    case 1:
-                        BinarySearchTree = (_a.sent()).default;
-                        t = new BinarySearchTree(50);
-                        t.moveTo(100, 100);
-                        t.setTreeFromArray([50, 25, 10, 40, 75, 60, 90]);
-                        setTree(t);
-                        Board/* default.add */.Z.add(t);
-                        return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        return function () {
-            play(function () { return panel_awaiter(void 0, void 0, void 0, function () {
-                return panel_generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            Board/* default.empty */.Z.empty();
-                            return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                        case 1:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
-                });
-            }); });
-        };
-    }, []);
-    return (react.createElement(react.Fragment, null,
-        react.createElement(components_PanelSection, null,
-            react.createElement(components_Label, { title: "Tree" }),
-            react.createElement("input", { className: "shadow appearance-none border w-full py-2 px-3 text-gray-700 rounded-md border-cyan-400 leading-tight focus:outline-none focus:shadow-outline", type: "text", placeholder: "Tree Nodes", defaultValue: T === null || T === void 0 ? void 0 : T.preOrderTraversal().join(), onChange: function (e) {
-                    var values = e.target.value.split(",").map(function (val) { return +val; });
-                    T.setTreeFromArray(values);
-                    play(function () { return panel_awaiter(void 0, void 0, void 0, function () {
-                        return panel_generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                                case 1:
-                                    _a.sent();
-                                    return [2 /*return*/];
-                            }
-                        });
-                    }); });
-                } }),
-            react.createElement("p", { className: "text-violet-500 text-xs italic py-1" }, "* Comma seperated values that will be inserted to an empty tree in sequence.")),
-        react.createElement(components_PanelSection, null,
-            react.createElement(components_Label, { title: "Animations" }),
-            react.createElement(components_AlgoInputButton, { title: "Search", onClick: function (value) {
-                    return play(function () { return panel_awaiter(void 0, void 0, void 0, function () { return panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(572)]).then(__webpack_require__.bind(__webpack_require__, 572))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(T, value)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoInputButton, { title: "Insert", onClick: function (value) {
-                    return play(function () { return panel_awaiter(void 0, void 0, void 0, function () { return panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(987), __webpack_require__.e(905)]).then(__webpack_require__.bind(__webpack_require__, 905))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(T, value)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoInputButton, { title: "Remove", onClick: function (value) {
-                    return play(function () { return panel_awaiter(void 0, void 0, void 0, function () { return panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(987), __webpack_require__.e(911)]).then(__webpack_require__.bind(__webpack_require__, 911))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(T, value)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }))));
-};
-/* harmony default export */ const panel = (BinarySearchTreePanel);
-
-;// CONCATENATED MODULE: ./src/lib/DS.tsx
-
-var DS;
-(function (DS) {
-    DS["NodeArray"] = "Node Array";
-    DS["BinarySearchTree"] = "Binary Search Tree";
-})(DS || (DS = {}));
-var DSList = function (_a) {
-    var setSelectedDS = _a.setSelectedDS;
-    var list = Object.entries(DS);
-    var buttonList = list.map(function (_a, index) {
-        var key = _a[0], value = _a[1];
-        return (react.createElement("button", { key: key, className: "\n          w-full p-2 border-y-slate-100 font-bold bg-slate-600 text-white hover:bg-slate-800\n          ".concat(index === 0 ? " rounded-t-lg" : "", "\n          ").concat(index === list.length - 1 ? " rounded-b-lg" : "", "\n        "), onClick: function () { return setSelectedDS(value); } }, value));
-    });
-    return react.createElement("div", { className: "mt-2" }, buttonList);
-};
-/* harmony default export */ const lib_DS = (DS);
-
-;// CONCATENATED MODULE: ./src/components/AlgoButton.tsx
-
-var AlgoButton = function (_a) {
-    var title = _a.title, onClick = _a.onClick;
-    return (react.createElement("button", { className: "w-full my-1 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none", onClick: onClick }, title));
-};
-/* harmony default export */ const components_AlgoButton = (AlgoButton);
-
-;// CONCATENATED MODULE: ./src/lib/NodeArray/panel.tsx
-var NodeArray_panel_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var NodeArray_panel_generator = (undefined && undefined.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-
-
-
-
-
-
-var NodeArrayPanel = function (_a) {
-    var play = _a.play;
-    var _b = (0,react.useState)(), arr = _b[0], setArr = _b[1];
-    (0,react.useEffect)(function () {
-        play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () {
-            var NodeArray, array;
-            return NodeArray_panel_generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, __webpack_require__.e(/* import() */ 793).then(__webpack_require__.bind(__webpack_require__, 793))];
-                    case 1:
-                        NodeArray = (_a.sent()).default;
-                        array = new NodeArray([9, 8, 7, 6, 5, 4, 0, 1, 2, 3]);
-                        array.moveTo(100, 100);
-                        setArr(array);
-                        Board/* default.add */.Z.add(array);
-                        return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); });
-        return function () {
-            play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () {
-                return NodeArray_panel_generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            Board/* default.empty */.Z.empty();
-                            return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                        case 1:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
-                });
-            }); });
-        };
-    }, []);
-    return (react.createElement(react.Fragment, null,
-        react.createElement(components_PanelSection, null,
-            react.createElement(components_Label, { title: "Array" }),
-            react.createElement("input", { className: "shadow appearance-none border w-full py-2 px-3 text-gray-700 rounded-md border-cyan-400 leading-tight focus:outline-none focus:shadow-outline", type: "text", placeholder: "Array", defaultValue: arr === null || arr === void 0 ? void 0 : arr.array.map(function (node) { return node.value; }).join(), onChange: function (e) {
-                    var values = e.target.value.split(",").map(function (val) { return +val; });
-                    play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () {
-                        return NodeArray_panel_generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    arr.setArray(values);
-                                    return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                                case 1:
-                                    _a.sent();
-                                    return [2 /*return*/];
-                            }
-                        });
-                    }); });
-                } }),
-            react.createElement("p", { className: "text-violet-500 text-xs italic py-1" }, "* Comma seperated values of array.")),
-        react.createElement(components_PanelSection, null,
-            react.createElement(components_Label, { title: "Algorithms" }),
-            react.createElement(components_AlgoButton, { title: "Insertion Sort", onClick: function () {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(647)]).then(__webpack_require__.bind(__webpack_require__, 647))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoButton, { title: "Bubble Sort", onClick: function () {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(104)]).then(__webpack_require__.bind(__webpack_require__, 104))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoButton, { title: "Merge Sort", onClick: function () {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(438)]).then(__webpack_require__.bind(__webpack_require__, 438))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoButton, { title: "Quick Sort", onClick: function () {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(552)]).then(__webpack_require__.bind(__webpack_require__, 552))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoButton, { title: "Selection Sort", onClick: function () {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(731)]).then(__webpack_require__.bind(__webpack_require__, 731))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoInputButton, { title: "Linear Search", onClick: function (value) {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(395)]).then(__webpack_require__.bind(__webpack_require__, 395))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr, value)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }),
-            react.createElement(components_AlgoInputButton, { title: "Binary Search", onClick: function (value) {
-                    return play(function () { return NodeArray_panel_awaiter(void 0, void 0, void 0, function () { return NodeArray_panel_generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, Promise.all(/* import() */[__webpack_require__.e(787), __webpack_require__.e(475)]).then(__webpack_require__.bind(__webpack_require__, 475))];
-                            case 1: return [4 /*yield*/, (_a.sent()).default(arr, value)];
-                            case 2: return [2 /*return*/, _a.sent()];
-                        }
-                    }); }); });
-                } }))));
-};
-/* harmony default export */ const NodeArray_panel = (NodeArrayPanel);
 
 ;// CONCATENATED MODULE: ./src/utils/useResponsiveScreen.ts
 
@@ -1459,21 +1157,1439 @@ function useResponsiveScreen() {
 }
 /* harmony default export */ const utils_useResponsiveScreen = (useResponsiveScreen);
 
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+function extends_extends() {
+  extends_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return extends_extends.apply(this, arguments);
+}
+;// CONCATENATED MODULE: ./node_modules/history/index.js
+var r,B=r||(r={});B.Pop="POP";B.Push="PUSH";B.Replace="REPLACE";var C= false?0:function(b){return b};function D(b,h){if(!b){"undefined"!==typeof console&&console.warn(h);try{throw Error(h);}catch(e){}}}function E(b){b.preventDefault();b.returnValue=""}
+function F(){var b=[];return{get length(){return b.length},push:function(h){b.push(h);return function(){b=b.filter(function(e){return e!==h})}},call:function(h){b.forEach(function(e){return e&&e(h)})}}}function H(){return Math.random().toString(36).substr(2,8)}function I(b){var h=b.pathname;h=void 0===h?"/":h;var e=b.search;e=void 0===e?"":e;b=b.hash;b=void 0===b?"":b;e&&"?"!==e&&(h+="?"===e.charAt(0)?e:"?"+e);b&&"#"!==b&&(h+="#"===b.charAt(0)?b:"#"+b);return h}
+function J(b){var h={};if(b){var e=b.indexOf("#");0<=e&&(h.hash=b.substr(e),b=b.substr(0,e));e=b.indexOf("?");0<=e&&(h.search=b.substr(e),b=b.substr(0,e));b&&(h.pathname=b)}return h}
+function history_createBrowserHistory(b){function h(){var c=p.location,a=m.state||{};return[a.idx,C({pathname:c.pathname,search:c.search,hash:c.hash,state:a.usr||null,key:a.key||"default"})]}function e(c){return"string"===typeof c?c:I(c)}function x(c,a){void 0===a&&(a=null);return C(_extends({pathname:q.pathname,hash:"",search:""},"string"===typeof c?J(c):c,{state:a,key:H()}))}function z(c){t=c;c=h();v=c[0];q=c[1];d.call({action:t,location:q})}function A(c,a){function f(){A(c,a)}var l=r.Push,k=x(c,
+a);if(!g.length||(g.call({action:l,location:k,retry:f}),!1)){var n=[{usr:k.state,key:k.key,idx:v+1},e(k)];k=n[0];n=n[1];try{m.pushState(k,"",n)}catch(G){p.location.assign(n)}z(l)}}function y(c,a){function f(){y(c,a)}var l=r.Replace,k=x(c,a);g.length&&(g.call({action:l,location:k,retry:f}),1)||(k=[{usr:k.state,key:k.key,idx:v},e(k)],m.replaceState(k[0],"",k[1]),z(l))}function w(c){m.go(c)}void 0===b&&(b={});b=b.window;var p=void 0===b?document.defaultView:b,m=p.history,u=null;p.addEventListener("popstate",
+function(){if(u)g.call(u),u=null;else{var c=r.Pop,a=h(),f=a[0];a=a[1];if(g.length)if(null!=f){var l=v-f;l&&(u={action:c,location:a,retry:function(){w(-1*l)}},w(l))}else false?0:
+void 0;else z(c)}});var t=r.Pop;b=h();var v=b[0],q=b[1],d=F(),g=F();null==v&&(v=0,m.replaceState(_extends({},m.state,{idx:v}),""));return{get action(){return t},get location(){return q},createHref:e,push:A,replace:y,go:w,back:function(){w(-1)},forward:function(){w(1)},listen:function(c){return d.push(c)},block:function(c){var a=g.push(c);1===g.length&&p.addEventListener("beforeunload",E);return function(){a();g.length||p.removeEventListener("beforeunload",E)}}}};
+function createHashHistory(b){function h(){var a=J(m.location.hash.substr(1)),f=a.pathname,l=a.search;a=a.hash;var k=u.state||{};return[k.idx,C({pathname:void 0===f?"/":f,search:void 0===l?"":l,hash:void 0===a?"":a,state:k.usr||null,key:k.key||"default"})]}function e(){if(t)c.call(t),t=null;else{var a=r.Pop,f=h(),l=f[0];f=f[1];if(c.length)if(null!=l){var k=q-l;k&&(t={action:a,location:f,retry:function(){p(-1*k)}},p(k))}else false?0:
+void 0;else A(a)}}function x(a){var f=document.querySelector("base"),l="";f&&f.getAttribute("href")&&(f=m.location.href,l=f.indexOf("#"),l=-1===l?f:f.slice(0,l));return l+"#"+("string"===typeof a?a:I(a))}function z(a,f){void 0===f&&(f=null);return C(extends_extends({pathname:d.pathname,hash:"",search:""},"string"===typeof a?J(a):a,{state:f,key:H()}))}function A(a){v=a;a=h();q=a[0];d=a[1];g.call({action:v,location:d})}function y(a,f){function l(){y(a,f)}var k=r.Push,n=z(a,f); false?
+0:void 0;if(!c.length||(c.call({action:k,location:n,retry:l}),!1)){var G=[{usr:n.state,key:n.key,idx:q+1},x(n)];n=G[0];G=G[1];try{u.pushState(n,"",G)}catch(K){m.location.assign(G)}A(k)}}function w(a,f){function l(){w(a,f)}var k=r.Replace,n=z(a,f); false?0:void 0;c.length&&(c.call({action:k,location:n,retry:l}),1)||(n=[{usr:n.state,key:n.key,idx:q},x(n)],u.replaceState(n[0],"",n[1]),A(k))}function p(a){u.go(a)}void 0===b&&(b={});b=b.window;var m=void 0===b?document.defaultView:b,u=m.history,t=null;m.addEventListener("popstate",e);m.addEventListener("hashchange",function(){var a=h()[1];I(a)!==I(d)&&e()});var v=r.Pop;b=h();var q=b[0],d=b[1],g=F(),c=F();null==q&&(q=0,u.replaceState(extends_extends({},u.state,{idx:q}),""));return{get action(){return v},get location(){return d},
+createHref:x,push:y,replace:w,go:p,back:function(){p(-1)},forward:function(){p(1)},listen:function(a){return g.push(a)},block:function(a){var f=c.push(a);1===c.length&&m.addEventListener("beforeunload",E);return function(){f();c.length||m.removeEventListener("beforeunload",E)}}}};
+function history_createMemoryHistory(b){function h(d,g){void 0===g&&(g=null);return C(_extends({pathname:t.pathname,search:"",hash:""},"string"===typeof d?J(d):d,{state:g,key:H()}))}function e(d,g,c){return!q.length||(q.call({action:d,location:g,retry:c}),!1)}function x(d,g){u=d;t=g;v.call({action:u,location:t})}function z(d,g){var c=r.Push,a=h(d,g); false?0:
+void 0;e(c,a,function(){z(d,g)})&&(m+=1,p.splice(m,p.length,a),x(c,a))}function A(d,g){var c=r.Replace,a=h(d,g); false?0:void 0;e(c,a,function(){A(d,g)})&&(p[m]=a,x(c,a))}function y(d){var g=Math.min(Math.max(m+d,0),p.length-1),c=r.Pop,a=p[g];e(c,a,function(){y(d)})&&(m=g,x(c,a))}void 0===b&&(b={});var w=b;b=w.initialEntries;w=w.initialIndex;var p=(void 0===
+b?["/"]:b).map(function(d){var g=C(_extends({pathname:"/",search:"",hash:"",state:null,key:H()},"string"===typeof d?J(d):d)); false?0:void 0;return g}),m=Math.min(Math.max(null==w?p.length-1:w,0),p.length-1),u=r.Pop,t=p[m],v=F(),q=F();return{get index(){return m},get action(){return u},get location(){return t},createHref:function(d){return"string"===
+typeof d?d:I(d)},push:z,replace:A,go:y,back:function(){y(-1)},forward:function(){y(1)},listen:function(d){return v.push(d)},block:function(d){return q.push(d)}}};
+//# sourceMappingURL=index.js.map
+
+;// CONCATENATED MODULE: ./node_modules/react-router/index.js
+/**
+ * React Router v6.2.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+function invariant(cond, message) {
+  if (!cond) throw new Error(message);
+}
+
+function warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+
+const alreadyWarned = {};
+
+function warningOnce(key, cond, message) {
+  if (!cond && !alreadyWarned[key]) {
+    alreadyWarned[key] = true;
+     false ? 0 : void 0;
+  }
+} ///////////////////////////////////////////////////////////////////////////////
+// CONTEXT
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * A Navigator is a "location changer"; it's how you get to different locations.
+ *
+ * Every history instance conforms to the Navigator interface, but the
+ * distinction is useful primarily when it comes to the low-level <Router> API
+ * where both the location and a navigator must be provided separately in order
+ * to avoid "tearing" that may occur in a suspense-enabled app if the action
+ * and/or location were to be read directly from the history instance.
+ */
+
+
+const NavigationContext = /*#__PURE__*/(0,react.createContext)(null);
+
+if (false) {}
+
+const LocationContext = /*#__PURE__*/(0,react.createContext)(null);
+
+if (false) {}
+
+const RouteContext = /*#__PURE__*/(0,react.createContext)({
+  outlet: null,
+  matches: []
+});
+
+if (false) {} ///////////////////////////////////////////////////////////////////////////////
+// COMPONENTS
+///////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#memoryrouter
+ */
+function MemoryRouter(_ref) {
+  let {
+    basename,
+    children,
+    initialEntries,
+    initialIndex
+  } = _ref;
+  let historyRef = useRef();
+
+  if (historyRef.current == null) {
+    historyRef.current = createMemoryHistory({
+      initialEntries,
+      initialIndex
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = useState({
+    action: history.action,
+    location: history.location
+  });
+  useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/createElement(react_router_Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#navigate
+ */
+function Navigate(_ref2) {
+  let {
+    to,
+    replace,
+    state
+  } = _ref2;
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+   false ? 0 : void 0;
+  let navigate = react_router_useNavigate();
+  useEffect(() => {
+    navigate(to, {
+      replace,
+      state
+    });
+  });
+  return null;
+}
+
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#outlet
+ */
+function Outlet(props) {
+  return useOutlet(props.context);
+}
+
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#route
+ */
+function Route(_props) {
+    false ? 0 : invariant(false) ;
+}
+
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#router
+ */
+function react_router_Router(_ref3) {
+  let {
+    basename: basenameProp = "/",
+    children = null,
+    location: locationProp,
+    navigationType = r.Pop,
+    navigator,
+    static: staticProp = false
+  } = _ref3;
+  !!useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  let basename = normalizePathname(basenameProp);
+  let navigationContext = (0,react.useMemo)(() => ({
+    basename,
+    navigator,
+    static: staticProp
+  }), [basename, navigator, staticProp]);
+
+  if (typeof locationProp === "string") {
+    locationProp = J(locationProp);
+  }
+
+  let {
+    pathname = "/",
+    search = "",
+    hash = "",
+    state = null,
+    key = "default"
+  } = locationProp;
+  let location = (0,react.useMemo)(() => {
+    let trailingPathname = stripBasename(pathname, basename);
+
+    if (trailingPathname == null) {
+      return null;
+    }
+
+    return {
+      pathname: trailingPathname,
+      search,
+      hash,
+      state,
+      key
+    };
+  }, [basename, pathname, search, hash, state, key]);
+   false ? 0 : void 0;
+
+  if (location == null) {
+    return null;
+  }
+
+  return /*#__PURE__*/(0,react.createElement)(NavigationContext.Provider, {
+    value: navigationContext
+  }, /*#__PURE__*/(0,react.createElement)(LocationContext.Provider, {
+    children: children,
+    value: {
+      location,
+      navigationType
+    }
+  }));
+}
+
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#routes
+ */
+function Routes(_ref4) {
+  let {
+    children,
+    location
+  } = _ref4;
+  return useRoutes(createRoutesFromChildren(children), location);
+} ///////////////////////////////////////////////////////////////////////////////
+// HOOKS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usehref
+ */
+
+function useHref(to) {
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react.useContext)(NavigationContext);
+  let {
+    hash,
+    pathname,
+    search
+  } = react_router_useResolvedPath(to);
+  let joinedPathname = pathname;
+
+  if (basename !== "/") {
+    let toPathname = getToPathname(to);
+    let endsWithSlash = toPathname != null && toPathname.endsWith("/");
+    joinedPathname = pathname === "/" ? basename + (endsWithSlash ? "/" : "") : joinPaths([basename, pathname]);
+  }
+
+  return navigator.createHref({
+    pathname: joinedPathname,
+    search,
+    hash
+  });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useinroutercontext
+ */
+
+function useInRouterContext() {
+  return (0,react.useContext)(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#uselocation
+ */
+
+function react_router_useLocation() {
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  return (0,react.useContext)(LocationContext).location;
+}
+
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigationtype
+ */
+function useNavigationType() {
+  return useContext(LocationContext).navigationType;
+}
+/**
+ * Returns true if the URL for the given "to" value matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usematch
+ */
+
+function useMatch(pattern) {
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  let {
+    pathname
+  } = react_router_useLocation();
+  return useMemo(() => matchPath(pattern, pathname), [pathname, pattern]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */
+
+/**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#usenavigate
+ */
+function react_router_useNavigate() {
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  let {
+    basename,
+    navigator
+  } = (0,react.useContext)(NavigationContext);
+  let {
+    matches
+  } = (0,react.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = react_router_useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  let activeRef = (0,react.useRef)(false);
+  (0,react.useEffect)(() => {
+    activeRef.current = true;
+  });
+  let navigate = (0,react.useCallback)(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+     false ? 0 : void 0;
+    if (!activeRef.current) return;
+
+    if (typeof to === "number") {
+      navigator.go(to);
+      return;
+    }
+
+    let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname);
+
+    if (basename !== "/") {
+      path.pathname = joinPaths([basename, path.pathname]);
+    }
+
+    (!!options.replace ? navigator.replace : navigator.push)(path, options.state);
+  }, [basename, navigator, routePathnamesJson, locationPathname]);
+  return navigate;
+}
+const OutletContext = /*#__PURE__*/(0,react.createContext)(null);
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/docs/en/v6/api#useoutletcontext
+ */
+
+function useOutletContext() {
+  return useContext(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useoutlet
+ */
+
+function useOutlet(context) {
+  let outlet = (0,react.useContext)(RouteContext).outlet;
+
+  if (outlet) {
+    return /*#__PURE__*/(0,react.createElement)(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+
+  return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useparams
+ */
+
+function useParams() {
+  let {
+    matches
+  } = useContext(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useresolvedpath
+ */
+
+function react_router_useResolvedPath(to) {
+  let {
+    matches
+  } = (0,react.useContext)(RouteContext);
+  let {
+    pathname: locationPathname
+  } = react_router_useLocation();
+  let routePathnamesJson = JSON.stringify(matches.map(match => match.pathnameBase));
+  return (0,react.useMemo)(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#useroutes
+ */
+
+function useRoutes(routes, locationArg) {
+  !useInRouterContext() ?  false ? 0 : invariant(false) : void 0;
+  let {
+    matches: parentMatches
+  } = (0,react.useContext)(RouteContext);
+  let routeMatch = parentMatches[parentMatches.length - 1];
+  let parentParams = routeMatch ? routeMatch.params : {};
+  let parentPathname = routeMatch ? routeMatch.pathname : "/";
+  let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+  let parentRoute = routeMatch && routeMatch.route;
+
+  if (false) {}
+
+  let locationFromContext = react_router_useLocation();
+  let location;
+
+  if (locationArg) {
+    var _parsedLocationArg$pa;
+
+    let parsedLocationArg = typeof locationArg === "string" ? J(locationArg) : locationArg;
+    !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ?  false ? 0 : invariant(false) : void 0;
+    location = parsedLocationArg;
+  } else {
+    location = locationFromContext;
+  }
+
+  let pathname = location.pathname || "/";
+  let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+  let matches = matchRoutes(routes, {
+    pathname: remainingPathname
+  });
+
+  if (false) {}
+
+  return _renderMatches(matches && matches.map(match => Object.assign({}, match, {
+    params: Object.assign({}, parentParams, match.params),
+    pathname: joinPaths([parentPathnameBase, match.pathname]),
+    pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, match.pathnameBase])
+  })), parentMatches);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#createroutesfromchildren
+ */
+
+function createRoutesFromChildren(children) {
+  let routes = [];
+  react.Children.forEach(children, element => {
+    if (! /*#__PURE__*/(0,react.isValidElement)(element)) {
+      // Ignore non-elements. This allows people to more easily inline
+      // conditionals in their route config.
+      return;
+    }
+
+    if (element.type === react.Fragment) {
+      // Transparently support React.Fragment and its children.
+      routes.push.apply(routes, createRoutesFromChildren(element.props.children));
+      return;
+    }
+
+    !(element.type === Route) ?  false ? 0 : invariant(false) : void 0;
+    let route = {
+      caseSensitive: element.props.caseSensitive,
+      element: element.props.element,
+      index: element.props.index,
+      path: element.props.path
+    };
+
+    if (element.props.children) {
+      route.children = createRoutesFromChildren(element.props.children);
+    }
+
+    routes.push(route);
+  });
+  return routes;
+}
+/**
+ * The parameters that were parsed from the URL path.
+ */
+
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#generatepath
+ */
+function generatePath(path, params) {
+  if (params === void 0) {
+    params = {};
+  }
+
+  return path.replace(/:(\w+)/g, (_, key) => {
+    !(params[key] != null) ?  false ? 0 : invariant(false) : void 0;
+    return params[key];
+  }).replace(/\/*\*$/, _ => params["*"] == null ? "" : params["*"].replace(/^\/*/, "/"));
+}
+/**
+ * A RouteMatch contains info about how a route matched a URL.
+ */
+
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchroutes
+ */
+function matchRoutes(routes, locationArg, basename) {
+  if (basename === void 0) {
+    basename = "/";
+  }
+
+  let location = typeof locationArg === "string" ? J(locationArg) : locationArg;
+  let pathname = stripBasename(location.pathname || "/", basename);
+
+  if (pathname == null) {
+    return null;
+  }
+
+  let branches = flattenRoutes(routes);
+  rankRouteBranches(branches);
+  let matches = null;
+
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    matches = matchRouteBranch(branches[i], pathname);
+  }
+
+  return matches;
+}
+
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  if (branches === void 0) {
+    branches = [];
+  }
+
+  if (parentsMeta === void 0) {
+    parentsMeta = [];
+  }
+
+  if (parentPath === void 0) {
+    parentPath = "";
+  }
+
+  routes.forEach((route, index) => {
+    let meta = {
+      relativePath: route.path || "",
+      caseSensitive: route.caseSensitive === true,
+      childrenIndex: index,
+      route
+    };
+
+    if (meta.relativePath.startsWith("/")) {
+      !meta.relativePath.startsWith(parentPath) ?  false ? 0 : invariant(false) : void 0;
+      meta.relativePath = meta.relativePath.slice(parentPath.length);
+    }
+
+    let path = joinPaths([parentPath, meta.relativePath]);
+    let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+    // route tree depth-first and child routes appear before their parents in
+    // the "flattened" version.
+
+    if (route.children && route.children.length > 0) {
+      !(route.index !== true) ?  false ? 0 : invariant(false) : void 0;
+      flattenRoutes(route.children, branches, routesMeta, path);
+    } // Routes without a path shouldn't ever match by themselves unless they are
+    // index routes, so don't add them to the list of possible branches.
+
+
+    if (route.path == null && !route.index) {
+      return;
+    }
+
+    branches.push({
+      path,
+      score: computeScore(path, route.index),
+      routesMeta
+    });
+  });
+  return branches;
+}
+
+function rankRouteBranches(branches) {
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score // Higher score first
+  : compareIndexes(a.routesMeta.map(meta => meta.childrenIndex), b.routesMeta.map(meta => meta.childrenIndex)));
+}
+
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+
+const isSplat = s => s === "*";
+
+function computeScore(path, index) {
+  let segments = path.split("/");
+  let initialScore = segments.length;
+
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty;
+  }
+
+  if (index) {
+    initialScore += indexRouteValue;
+  }
+
+  return segments.filter(s => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+
+function compareIndexes(a, b) {
+  let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+  return siblings ? // If two routes are siblings, we should try to match the earlier sibling
+  // first. This allows people to have fine-grained control over the matching
+  // behavior by simply putting routes with identical paths in the order they
+  // want them tried.
+  a[a.length - 1] - b[b.length - 1] : // Otherwise, it doesn't really make sense to rank non-siblings by index,
+  // so they sort equally.
+  0;
+}
+
+function matchRouteBranch(branch, pathname) {
+  let {
+    routesMeta
+  } = branch;
+  let matchedParams = {};
+  let matchedPathname = "/";
+  let matches = [];
+
+  for (let i = 0; i < routesMeta.length; ++i) {
+    let meta = routesMeta[i];
+    let end = i === routesMeta.length - 1;
+    let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+    let match = matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
+      end
+    }, remainingPathname);
+    if (!match) return null;
+    Object.assign(matchedParams, match.params);
+    let route = meta.route;
+    matches.push({
+      params: matchedParams,
+      pathname: joinPaths([matchedPathname, match.pathname]),
+      pathnameBase: joinPaths([matchedPathname, match.pathnameBase]),
+      route
+    });
+
+    if (match.pathnameBase !== "/") {
+      matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
+    }
+  }
+
+  return matches;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */
+
+
+function renderMatches(matches) {
+  return _renderMatches(matches);
+}
+
+function _renderMatches(matches, parentMatches) {
+  if (parentMatches === void 0) {
+    parentMatches = [];
+  }
+
+  if (matches == null) return null;
+  return matches.reduceRight((outlet, match, index) => {
+    return /*#__PURE__*/(0,react.createElement)(RouteContext.Provider, {
+      children: match.route.element !== undefined ? match.route.element : /*#__PURE__*/(0,react.createElement)(Outlet, null),
+      value: {
+        outlet,
+        matches: parentMatches.concat(matches.slice(0, index + 1))
+      }
+    });
+  }, null);
+}
+/**
+ * A PathPattern is used to match on some portion of a URL pathname.
+ */
+
+
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#matchpath
+ */
+function matchPath(pattern, pathname) {
+  if (typeof pattern === "string") {
+    pattern = {
+      path: pattern,
+      caseSensitive: false,
+      end: true
+    };
+  }
+
+  let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+  let match = pathname.match(matcher);
+  if (!match) return null;
+  let matchedPathname = match[0];
+  let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+  let captureGroups = match.slice(1);
+  let params = paramNames.reduce((memo, paramName, index) => {
+    // We need to compute the pathnameBase here using the raw splat value
+    // instead of using params["*"] later because it will be decoded then
+    if (paramName === "*") {
+      let splatValue = captureGroups[index] || "";
+      pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+    }
+
+    memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+    return memo;
+  }, {});
+  return {
+    params,
+    pathname: matchedPathname,
+    pathnameBase,
+    pattern
+  };
+}
+
+function compilePath(path, caseSensitive, end) {
+  if (caseSensitive === void 0) {
+    caseSensitive = false;
+  }
+
+  if (end === void 0) {
+    end = true;
+  }
+
+   false ? 0 : void 0;
+  let paramNames = [];
+  let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+  .replace(/^\/*/, "/") // Make sure it has a leading /
+  .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+  .replace(/:(\w+)/g, (_, paramName) => {
+    paramNames.push(paramName);
+    return "([^\\/]+)";
+  });
+
+  if (path.endsWith("*")) {
+    paramNames.push("*");
+    regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+    : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+  } else {
+    regexpSource += end ? "\\/*$" // When matching to the end, ignore trailing slashes
+    : // Otherwise, match a word boundary or a proceeding /. The word boundary restricts
+    // parent routes to matching only their own words and nothing more, e.g. parent
+    // route "/home" should not match "/home2".
+    "(?:\\b|\\/|$)";
+  }
+
+  let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+  return [matcher, paramNames];
+}
+
+function safelyDecodeURIComponent(value, paramName) {
+  try {
+    return decodeURIComponent(value);
+  } catch (error) {
+     false ? 0 : void 0;
+    return value;
+  }
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/docs/en/v6/api#resolvepath
+ */
+
+
+function resolvePath(to, fromPathname) {
+  if (fromPathname === void 0) {
+    fromPathname = "/";
+  }
+
+  let {
+    pathname: toPathname,
+    search = "",
+    hash = ""
+  } = typeof to === "string" ? J(to) : to;
+  let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+  return {
+    pathname,
+    search: normalizeSearch(search),
+    hash: normalizeHash(hash)
+  };
+}
+
+function resolvePathname(relativePath, fromPathname) {
+  let segments = fromPathname.replace(/\/+$/, "").split("/");
+  let relativeSegments = relativePath.split("/");
+  relativeSegments.forEach(segment => {
+    if (segment === "..") {
+      // Keep the root "" segment so the pathname starts at /
+      if (segments.length > 1) segments.pop();
+    } else if (segment !== ".") {
+      segments.push(segment);
+    }
+  });
+  return segments.length > 1 ? segments.join("/") : "/";
+}
+
+function resolveTo(toArg, routePathnames, locationPathname) {
+  let to = typeof toArg === "string" ? J(toArg) : toArg;
+  let toPathname = toArg === "" || to.pathname === "" ? "/" : to.pathname; // If a pathname is explicitly provided in `to`, it should be relative to the
+  // route context. This is explained in `Note on `<Link to>` values` in our
+  // migration guide from v5 as a means of disambiguation between `to` values
+  // that begin with `/` and those that do not. However, this is problematic for
+  // `to` values that do not provide a pathname. `to` can simply be a search or
+  // hash string, in which case we should assume that the navigation is relative
+  // to the current location's pathname and *not* the route pathname.
+
+  let from;
+
+  if (toPathname == null) {
+    from = locationPathname;
+  } else {
+    let routePathnameIndex = routePathnames.length - 1;
+
+    if (toPathname.startsWith("..")) {
+      let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+      // URL segment".  This is a key difference from how <a href> works and a
+      // major reason we call this a "to" value instead of a "href".
+
+      while (toSegments[0] === "..") {
+        toSegments.shift();
+        routePathnameIndex -= 1;
+      }
+
+      to.pathname = toSegments.join("/");
+    } // If there are more ".." segments than parent routes, resolve relative to
+    // the root / URL.
+
+
+    from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+  }
+
+  let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original to value had one.
+
+  if (toPathname && toPathname !== "/" && toPathname.endsWith("/") && !path.pathname.endsWith("/")) {
+    path.pathname += "/";
+  }
+
+  return path;
+}
+
+function getToPathname(to) {
+  // Empty strings should be treated the same as / paths
+  return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? J(to).pathname : to.pathname;
+}
+
+function stripBasename(pathname, basename) {
+  if (basename === "/") return pathname;
+
+  if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) {
+    return null;
+  }
+
+  let nextChar = pathname.charAt(basename.length);
+
+  if (nextChar && nextChar !== "/") {
+    // pathname does not start with basename/
+    return null;
+  }
+
+  return pathname.slice(basename.length) || "/";
+}
+
+const joinPaths = paths => paths.join("/").replace(/\/\/+/g, "/");
+
+const normalizePathname = pathname => pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+
+const normalizeSearch = search => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+
+const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash; ///////////////////////////////////////////////////////////////////////////////
+
+
+//# sourceMappingURL=index.js.map
+
+;// CONCATENATED MODULE: ./node_modules/react-router-dom/index.js
+/**
+ * React Router DOM v6.2.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+
+function react_router_dom_extends() {
+  react_router_dom_extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return react_router_dom_extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+const _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"],
+      _excluded2 = (/* unused pure expression or super */ null && (["aria-current", "caseSensitive", "className", "end", "style", "to", "children"]));
+
+function react_router_dom_warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging React Router!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+} ////////////////////////////////////////////////////////////////////////////////
+// COMPONENTS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+function BrowserRouter(_ref) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref;
+  let historyRef = useRef();
+
+  if (historyRef.current == null) {
+    historyRef.current = createBrowserHistory({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = useState({
+    action: history.action,
+    location: history.location
+  });
+  useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/createElement(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */
+function HashRouter(_ref2) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref2;
+  let historyRef = (0,react.useRef)();
+
+  if (historyRef.current == null) {
+    historyRef.current = createHashHistory({
+      window
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = (0,react.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0,react.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react.createElement)(react_router_Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */
+function HistoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    history
+  } = _ref3;
+  const [state, setState] = useState({
+    action: history.action,
+    location: history.location
+  });
+  useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/createElement(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+if (false) {}
+
+function isModifiedEvent(event) {
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+const Link = /*#__PURE__*/(0,react.forwardRef)(function LinkWithRef(_ref4, ref) {
+  let {
+    onClick,
+    reloadDocument,
+    replace = false,
+    state,
+    target,
+    to
+  } = _ref4,
+      rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+
+  let href = useHref(to);
+  let internalOnClick = useLinkClickHandler(to, {
+    replace,
+    state,
+    target
+  });
+
+  function handleClick(event) {
+    if (onClick) onClick(event);
+
+    if (!event.defaultPrevented && !reloadDocument) {
+      internalOnClick(event);
+    }
+  }
+
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    (0,react.createElement)("a", react_router_dom_extends({}, rest, {
+      href: href,
+      onClick: handleClick,
+      ref: ref,
+      target: target
+    }))
+  );
+});
+
+if (false) {}
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+const NavLink = /*#__PURE__*/(/* unused pure expression or super */ null && (forwardRef(function NavLinkWithRef(_ref5, ref) {
+  let {
+    "aria-current": ariaCurrentProp = "page",
+    caseSensitive = false,
+    className: classNameProp = "",
+    end = false,
+    style: styleProp,
+    to,
+    children
+  } = _ref5,
+      rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+
+  let location = useLocation();
+  let path = useResolvedPath(to);
+  let locationPathname = location.pathname;
+  let toPathname = path.pathname;
+
+  if (!caseSensitive) {
+    locationPathname = locationPathname.toLowerCase();
+    toPathname = toPathname.toLowerCase();
+  }
+
+  let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+  let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+  let className;
+
+  if (typeof classNameProp === "function") {
+    className = classNameProp({
+      isActive
+    });
+  } else {
+    // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [classNameProp, isActive ? "active" : null].filter(Boolean).join(" ");
+  }
+
+  let style = typeof styleProp === "function" ? styleProp({
+    isActive
+  }) : styleProp;
+  return /*#__PURE__*/createElement(Link, react_router_dom_extends({}, rest, {
+    "aria-current": ariaCurrent,
+    className: className,
+    ref: ref,
+    style: style,
+    to: to
+  }), typeof children === "function" ? children({
+    isActive
+  }) : children);
+})));
+
+if (false) {} ////////////////////////////////////////////////////////////////////////////////
+// HOOKS
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */
+
+
+function useLinkClickHandler(to, _temp) {
+  let {
+    target,
+    replace: replaceProp,
+    state
+  } = _temp === void 0 ? {} : _temp;
+  let navigate = react_router_useNavigate();
+  let location = react_router_useLocation();
+  let path = react_router_useResolvedPath(to);
+  return (0,react.useCallback)(event => {
+    if (event.button === 0 && ( // Ignore everything but left clicks
+    !target || target === "_self") && // Let browser handle "target=_blank" etc.
+    !isModifiedEvent(event) // Ignore clicks with modifier keys
+    ) {
+      event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+      // a push, so do the same here.
+
+      let replace = !!replaceProp || I(location) === I(path);
+      navigate(to, {
+        replace,
+        state
+      });
+    }
+  }, [location, navigate, path, replaceProp, state, target, to]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */
+
+function useSearchParams(defaultInit) {
+   false ? 0 : void 0;
+  let defaultSearchParamsRef = useRef(createSearchParams(defaultInit));
+  let location = useLocation();
+  let searchParams = useMemo(() => {
+    let searchParams = createSearchParams(location.search);
+
+    for (let key of defaultSearchParamsRef.current.keys()) {
+      if (!searchParams.has(key)) {
+        defaultSearchParamsRef.current.getAll(key).forEach(value => {
+          searchParams.append(key, value);
+        });
+      }
+    }
+
+    return searchParams;
+  }, [location.search]);
+  let navigate = useNavigate();
+  let setSearchParams = useCallback((nextInit, navigateOptions) => {
+    navigate("?" + createSearchParams(nextInit), navigateOptions);
+  }, [navigate]);
+  return [searchParams, setSearchParams];
+}
+
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */
+function createSearchParams(init) {
+  if (init === void 0) {
+    init = "";
+  }
+
+  return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+    let value = init[key];
+    return memo.concat(Array.isArray(value) ? value.map(v => [key, v]) : [[key, value]]);
+  }, []));
+}
+
+
+//# sourceMappingURL=index.js.map
+
 ;// CONCATENATED MODULE: ./src/components/Loading/index.tsx
 
 
 var Loading = function () {
-    return (react.createElement("div", { className: 'w-full h-full flex justify-center items-center' },
-        react.createElement("div", { className: "loadingio-spinner-bars-wbxz0i13iq" },
-            react.createElement("div", { className: "ldio-42ninjqcgp4" },
-                react.createElement("div", null),
-                react.createElement("div", null),
-                react.createElement("div", null),
-                react.createElement("div", null)))));
+    return (react.createElement("div", { className: "z-10 w-full h-full bg-white top-0 left-0 absolute" },
+        react.createElement("div", { className: "w-full h-full flex justify-center items-center" },
+            react.createElement("div", { className: "loadingio-spinner-bars-wbxz0i13iq" },
+                react.createElement("div", { className: "ldio-42ninjqcgp4" },
+                    react.createElement("div", null),
+                    react.createElement("div", null),
+                    react.createElement("div", null),
+                    react.createElement("div", null))))));
 };
 /* harmony default export */ const components_Loading = (Loading);
 
-;// CONCATENATED MODULE: ./src/components/Panel.tsx
+;// CONCATENATED MODULE: ./src/lib/DS.tsx
+
+
+var DS;
+(function (DS) {
+    DS["NodeArray"] = "Node Array";
+    DS["BinarySearchTree"] = "Binary Search Tree";
+})(DS || (DS = {}));
+var DSList = function () {
+    var list = Object.entries(DS);
+    var buttonList = list.map(function (_a, index) {
+        var key = _a[0], value = _a[1];
+        return (react.createElement(Link, { key: key, to: "/".concat(value.split(" ").join("-")) },
+            react.createElement("button", { className: "\n          w-full p-2 border-y-slate-100 font-bold bg-slate-600 text-white hover:bg-slate-800\n          ".concat(index === 0 ? " rounded-t-lg" : "", "\n          ").concat(index === list.length - 1 ? " rounded-b-lg" : "", "\n        ") }, value)));
+    });
+    return react.createElement("div", { className: "mt-2" }, buttonList);
+};
+/* harmony default export */ const lib_DS = (DS);
+
+// EXTERNAL MODULE: ./src/components/Panel/Label.tsx
+var Label = __webpack_require__(298);
+;// CONCATENATED MODULE: ./src/components/Panel/UtilsSection.tsx
+var UtilsSection_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var UtilsSection_generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+var UtilSection = function (_a) {
+    var play = _a.play;
+    return (react.createElement("div", { className: "flex justify-between items-center m-4" },
+        react.createElement(Label/* default */.Z, null,
+            "Scale",
+            react.createElement("span", { className: "text-sm italic font-medium" }, "(between 0 and 1)")),
+        react.createElement("input", { className: "shadow appearance-none border py-2 px-3 text-gray-700 rounded-md border-cyan-400 leading-tight focus:outline-none focus:shadow-outline", type: "number", min: 0, step: 0.1, max: 1, defaultValue: Board/* default.scale */.Z.scale, onChange: function (e) {
+                var value = +e.target.value;
+                if (value > 1) {
+                    value = 1;
+                }
+                if (value < 0) {
+                    value = 0;
+                }
+                Board/* default.scale */.Z.scale = value;
+                play(function () { return UtilsSection_awaiter(void 0, void 0, void 0, function () {
+                    return UtilsSection_generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, Board/* default.draw */.Z.draw()];
+                            case 1:
+                                _a.sent();
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+            } })));
+};
+/* harmony default export */ const UtilsSection = (UtilSection);
+
+;// CONCATENATED MODULE: ./src/components/Panel/index.tsx
 var Panel_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1516,13 +2632,14 @@ var Panel_generator = (undefined && undefined.__generator) || function (thisArg,
 
 
 
-
+var NodeArrayPanel = react.lazy(function () { return Promise.all(/* import() */[__webpack_require__.e(545), __webpack_require__.e(488)]).then(__webpack_require__.bind(__webpack_require__, 488)); });
+var BinarySearchTreePanel = react.lazy(function () { return Promise.all(/* import() */[__webpack_require__.e(545), __webpack_require__.e(838)]).then(__webpack_require__.bind(__webpack_require__, 838)); });
 var Panel = function () {
     var _a = (0,react.useState)(200), height = _a[0], setHeight = _a[1];
     var _b = (0,react.useState)(false), loading = _b[0], showLoading = _b[1];
-    var _c = (0,react.useState)(lib_DS.BinarySearchTree), selectedDS = _c[0], setSelectedDS = _c[1];
+    var location = react_router_useLocation();
     var size = utils_useResponsiveScreen();
-    var _d = (0,react.useState)(false), drag = _d[0], setDrag = _d[1];
+    var _c = (0,react.useState)(false), drag = _c[0], setDrag = _c[1];
     var handleDrag = function (clientY) {
         if (drag && clientY > 100) {
             setHeight(window.innerHeight - clientY - 20);
@@ -1549,41 +2666,18 @@ var Panel = function () {
     return (react.createElement("aside", { className: "fixed w-screen bottom-0 bg-white rounded-t-3xl lg:rounded-none lg:relative lg:shrink-0 lg:w-1/3" },
         size !== "lg" && (react.createElement("div", { className: "p-3 flex justify-center", onMouseDown: function () { return setDrag(true); }, onTouchStart: function () { return setDrag(true); }, onMouseMove: function (e) { return handleDrag(e.clientY); }, onTouchMove: function (e) { return handleDrag(e.touches[0].clientY); }, onMouseUp: function () { return setDrag(false); }, onTouchEnd: function () { return setDrag(false); } },
             react.createElement("div", { className: "bg-slate-800 w-1/2 rounded-md p-1" }))),
-        react.createElement("div", { className: "overflow-auto p-2", style: { height: "".concat(size === "lg" ? "100%" : height + "px") } },
+        react.createElement("div", { className: "p-2 relative ".concat(loading ? "" : "overflow-auto"), style: { height: "".concat(size === "lg" ? "100%" : height + "px") } },
             loading && react.createElement(components_Loading, null),
-            react.createElement("div", { className: "".concat(loading ? "hidden" : "") },
-                react.createElement("button", { className: "p-3 w-full rounded-lg font-bold bg-slate-600 hover:bg-slate-800 text-white flex justify-between", onClick: function () { return setSelectedDS(undefined); } },
-                    react.createElement("h2", null, selectedDS),
-                    react.createElement("span", { className: "material-icons" }, "expand_more")),
-                selectedDS === undefined ? (react.createElement(DSList, { setSelectedDS: setSelectedDS })) : (react.createElement(react.Fragment, null,
-                    react.createElement("hr", { className: "my-4" }),
-                    react.createElement("div", { className: "flex justify-between items-center m-4" },
-                        react.createElement("label", { className: "block text-gray-700 text-md font-bold" },
-                            "Scale",
-                            react.createElement("span", { className: "text-sm italic font-medium" }, "(between 0 and 1)")),
-                        react.createElement("input", { className: "shadow appearance-none border py-2 px-3 text-gray-700 rounded-md border-cyan-400 leading-tight focus:outline-none focus:shadow-outline", type: "number", min: 0, step: 0.1, max: 1, defaultValue: Board/* default.scale */.Z.scale, onChange: function (e) {
-                                var value = +e.target.value;
-                                if (value > 1) {
-                                    value = 1;
-                                }
-                                if (value < 0) {
-                                    value = 0;
-                                }
-                                Board/* default.scale */.Z.scale = value;
-                                play(function () { return Panel_awaiter(void 0, void 0, void 0, function () {
-                                    return Panel_generator(this, function (_a) {
-                                        switch (_a.label) {
-                                            case 0: return [4 /*yield*/, Board/* default.draw */.Z.draw()];
-                                            case 1:
-                                                _a.sent();
-                                                return [2 /*return*/];
-                                        }
-                                    });
-                                }); });
-                            } })),
-                    react.createElement("hr", { className: "my-4" }),
-                    selectedDS === lib_DS.NodeArray && react.createElement(NodeArray_panel, { play: play }),
-                    selectedDS === lib_DS.BinarySearchTree && (react.createElement(panel, { play: play }))))))));
+            react.createElement(Link, { to: "/" },
+                react.createElement("button", { className: "p-3 w-full rounded-lg font-bold bg-slate-600 hover:bg-slate-800 text-white flex justify-between" },
+                    react.createElement("h2", null, location.pathname.substring(1).split("-").join(" ")),
+                    react.createElement("span", { className: "material-icons" }, "expand_more"))),
+            location.pathname !== "/" && react.createElement(UtilsSection, { play: play }),
+            react.createElement(react.Suspense, { fallback: react.createElement(components_Loading, null) },
+                react.createElement(Routes, null,
+                    react.createElement(Route, { path: "/", element: react.createElement(DSList, null) }),
+                    react.createElement(Route, { path: "/".concat(lib_DS.NodeArray.split(" ").join("-")), element: react.createElement(NodeArrayPanel, { play: play }) }),
+                    react.createElement(Route, { path: "/".concat(lib_DS.BinarySearchTree.split(" ").join("-")), element: react.createElement(BinarySearchTreePanel, { play: play }) }))))));
 };
 /* harmony default export */ const components_Panel = (Panel);
 
@@ -1606,8 +2700,10 @@ var App = function () {
 
 
 
+
 react_dom.render(react.createElement(react.StrictMode, null,
-    react.createElement(components_App, null)), document.getElementById("root"));
+    react.createElement(HashRouter, null,
+        react.createElement(components_App, null))), document.getElementById("root"));
 
 })();
 
